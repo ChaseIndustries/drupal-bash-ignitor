@@ -130,6 +130,8 @@ drush dl field_collection
 drush dl blockaccess
 drush dl admin_menu
 drush dl date
+drush dl ds
+drush dl special_menu_items
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -202,7 +204,6 @@ drush en entity -y
 drush en entityreference -y
 drush en features -y
 drush en field_group -y
-drush en icon, icon_field, icon_menu -y
 drush en jquery_update -y
 drush en link -y
 drush en publication_date -y
@@ -218,6 +219,11 @@ drush en blockreference -y
 drush en block_access -y
 drush en admin_menu -y
 drush en date -y
+drush en ds -y
+drush en ds_extras -y
+drush en ds_ui -y
+drush en special_menu_items -y
+drush en admin_menu_toolbar -y
 
 printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 
