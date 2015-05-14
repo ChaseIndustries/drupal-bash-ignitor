@@ -26,7 +26,7 @@ cat << "EOF"
 EOF
 
 read -r -p "
-Welcome to Drupal Ignitor.
+Welcome to Drupal.
 
 You should run this script from the parent directory of where you want to install Drupal.
 
@@ -117,7 +117,6 @@ drush dl field_group
 drush dl icon
 drush dl jquery_update
 drush dl link
-drush dl markdown
 drush dl publication_date
 drush dl strongarm
 drush dl token
@@ -125,7 +124,12 @@ drush dl pathauto
 drush dl webform
 drush dl ctools
 drush dl views
-drush dl insert
+drush dl ckeditor
+drush dl imce
+drush dl field_collection
+drush dl blockaccess
+drush dl admin_menu
+drush dl date
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -133,22 +137,15 @@ printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 git clone https://github.com/balsama/beannorev.git sites/all/modules/custom/beannorev
 git clone https://github.com/balsama/beannotitle.git sites/all/modules/custom/beannotitle
 git clone https://github.com/balsama/image_styles.git sites/all/modules/features/image_styles
-git clone https://github.com/balsama/markdown_text_format.git sites/all/modules/features/markdown_text_format
 rm -rf sites/all/modules/custom/beannorev/.git
 rm -rf sites/all/modules/custom/beannotitle/.git
 rm -rf sites/all/modules/features/image_styles/.git
-rm -rf sites/all/modules/features/markdown_text_format/.git
-
-# Download contrib themes
-drush dl bootstrap
 
 printf "\n##\n# Step 3 of 13 (Cownload contrib themes) Complete\n##\n"
 
 # Download custom themes and remove their git directories
-git clone https://github.com/balsama/bootstrap_starter.git sites/all/themes/bootstrap_starter
-git clone https://github.com/balsama/bootstrap_ignitor.git sites/all/themes/bootstrap_ignitor
-rm -rf sites/all/themes/bootstrap_starter/.git
-rm -rf sites/all/themes/bootstrap_ignitor/.git
+git clone https://github.com/ChaseIndustries/foundation-starter.git
+rm -rf sites/all/themes/STARTER/.git
 
 printf "\n##\n# Step 4 of 13 (Download custom themes) Complete\n##\n"
 
@@ -161,7 +158,7 @@ drush pm-disable barktik -y
 printf "\n##\n# Step 5 of 13 (Enable themes) Complete\n##\n"
 
 # Set bootstrap_starter to default theme
-drush vset theme_default bootstrap_starter
+drush vset theme_default starter
 
 printf "\n##\n# Step 6 of 13 (Set default theme) Complete\n##\n"
 
@@ -206,16 +203,21 @@ drush en entityreference -y
 drush en features -y
 drush en field_group -y
 drush en icon, icon_field, icon_menu -y
-drush en insert -y
 drush en jquery_update -y
 drush en link -y
-drush en markdown -y
 drush en publication_date -y
 drush en strongarm -y
 drush en token -y
 drush en pathauto -y
 drush en webform -y
 drush en views, views_ui -y
+drush en imce -y
+drush en ckeditor -y
+drush en field_collection -y
+drush en blockreference -y
+drush en block_access -y
+drush en admin_menu -y
+drush en date -y
 
 printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 
@@ -223,7 +225,6 @@ printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 drush en beannorev -y
 drush en beannotitle -y
 drush en image_styles -y
-drush en markdown_text_format -y
 
 printf "\n##\n# Step 12 of 13 (Enable custom modules) Complete\n##\n"
 
