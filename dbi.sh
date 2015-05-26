@@ -132,6 +132,7 @@ drush dl admin_menu
 drush dl date
 drush dl ds
 drush dl special_menu_items
+drush dl module_filter
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -224,6 +225,7 @@ drush en ds_extras -y
 drush en ds_ui -y
 drush en special_menu_items -y
 drush en admin_menu_toolbar -y
+drush en module_filter -y
 
 printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 
@@ -246,6 +248,16 @@ printf "\n##\n# Finishing up\n##\n"
 
 # Clear the cache for good measure
 drush cc all
+
+# Install npm modules
+
+cd sites/all/STARTER
+sudo npm install
+
+# Run some initial grunt tasks
+
+grunt grunticon
+grunt sass
 
 printf "\n##\n# Configuration complete!\n##\n"
 
