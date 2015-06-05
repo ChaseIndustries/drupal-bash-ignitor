@@ -134,6 +134,7 @@ drush dl ds
 drush dl special_menu_items
 drush dl module_filter
 drush dl search_krumo
+drush dl improved_multi_select
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -228,6 +229,7 @@ drush en special_menu_items -y
 drush en admin_menu_toolbar -y
 drush en module_filter -y
 drush en search_krumo -y
+drush en improved_multi_select -y
 
 printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 
