@@ -134,7 +134,7 @@ drush dl ds
 drush dl special_menu_items
 drush dl module_filter
 drush dl search_krumo
-drush dl improved_multi_select
+drush dl improved_multi_select-7.x-2.x-dev
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
