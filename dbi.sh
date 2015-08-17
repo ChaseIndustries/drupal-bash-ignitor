@@ -135,6 +135,9 @@ drush dl special_menu_items
 drush dl module_filter
 drush dl search_krumo
 drush dl ckeditor_link
+drush dl better_formats
+drush dl content_menu
+drush dl special_menu_items
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -230,6 +233,9 @@ drush en admin_menu_toolbar -y
 drush en module_filter -y
 drush en search_krumo -y
 drush en ckeditor_link -y
+drush en better_formats -y
+drush en content_menu -y
+drush en special_menu_items -y
 
 printf "\n##\n# Step 11 of 13 (Enable contrib modules) Complete\n##\n"
 
