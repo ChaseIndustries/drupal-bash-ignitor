@@ -156,14 +156,14 @@ rm -rf sites/all/themes/STARTER/.git
 printf "\n##\n# Step 4 of 13 (Download custom themes) Complete\n##\n"
 
 # Enable the bootstrap themes
-drush pm-enable foundation
-drush pm-enable starter
+drush pm-enable zurb_foundation
+drush pm-enable STARTER
 drush pm-disable bartik -y
 
 printf "\n##\n# Step 5 of 13 (Enable themes) Complete\n##\n"
 
 # Set starter to default theme
-drush vset theme_default starter
+drush vset theme_default STARTER
 
 printf "\n##\n# Step 6 of 13 (Set default theme) Complete\n##\n"
 
