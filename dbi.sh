@@ -127,7 +127,7 @@ drush dl views
 drush dl ckeditor
 drush dl imce
 drush dl field_collection
-drush dl blockaccess
+drush dl block_access
 drush dl admin_menu
 drush dl date
 drush dl ds
@@ -137,7 +137,6 @@ drush dl search_krumo
 drush dl ckeditor_link
 drush dl better_formats
 drush dl content_menu
-drush dl special_menu_items
 
 printf "\n##\n# Step 2 of 13 (Download contrib modules) Complete\n##\n"
 
@@ -152,20 +151,20 @@ rm -rf sites/all/modules/features/image_styles/.git
 printf "\n##\n# Step 3 of 13 (Cownload contrib themes) Complete\n##\n"
 
 # Download custom themes and remove their git directories
-git clone https://github.com/ChaseIndustries/foundation-starter.git
+git clone https://github.com/ChaseIndustries/foundation-starter.git sites/all/themes/STARTER -b headless
+git clone https://github.com/ChaseIndustries/foundation-theme.git sites/all/themes/zurb-foundation
 rm -rf sites/all/themes/STARTER/.git
 
 printf "\n##\n# Step 4 of 13 (Download custom themes) Complete\n##\n"
 
 # Enable the bootstrap themes
-drush pm-enable bootstrap -y
-drush pm-enable bootstrap_ignitor -y
-drush pm-enable bootstrap_starter -y
-drush pm-disable barktik -y
+drush pm-enable foundation
+drush pm-enable starter
+drush pm-disable bartik -y
 
 printf "\n##\n# Step 5 of 13 (Enable themes) Complete\n##\n"
 
-# Set bootstrap_starter to default theme
+# Set starter to default theme
 drush vset theme_default starter
 
 printf "\n##\n# Step 6 of 13 (Set default theme) Complete\n##\n"
@@ -228,7 +227,6 @@ drush en date -y
 drush en ds -y
 drush en ds_extras -y
 drush en ds_ui -y
-drush en special_menu_items -y
 drush en admin_menu_toolbar -y
 drush en module_filter -y
 drush en search_krumo -y
@@ -261,7 +259,7 @@ drush cc all
 
 # Install npm modules
 
-cd sites/all/STARTER
+cd sites/all/themes/STARTER
 sudo npm install
 
 # Run some initial grunt tasks
