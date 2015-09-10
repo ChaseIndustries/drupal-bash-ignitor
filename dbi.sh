@@ -150,7 +150,7 @@ printf "\n##\n# Step 3 of 13 (Cownload contrib themes) Complete\n##\n"
 
 # Download custom themes and remove their git directories
 git clone https://github.com/ChaseIndustries/foundation-starter.git sites/all/themes/STARTER -b headless
-git clone https://github.com/ChaseIndustries/foundation-theme.git sites/all/themes/zurb-foundation
+git clone https://github.com/ChaseIndustries/foundation-theme.git sites/all/themes/zurb_foundation
 rm -rf sites/all/themes/STARTER/.git
 
 printf "\n##\n# Step 4 of 13 (Download custom themes) Complete\n##\n"
