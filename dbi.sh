@@ -88,9 +88,7 @@ case $response in
         ;;
 esac
 
-drush dl --drupal-project-rename=$DIRECTORY --yes
-
-cp $DIRECTORY/sites/default/default.settings.php $DIRECTORY/sites/default/settings.php
+drush dl drupal --drupal-project-rename=$DIRECTORY --yes
 
 cd $DIRECTORY
 
