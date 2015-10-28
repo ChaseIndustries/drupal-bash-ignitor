@@ -194,7 +194,6 @@ drush en options -y
 drush en path -y
 drush en shortcut -y
 drush en taxonomy -y
-drush en toolbar -y
 
 printf "\n##\n# Step 10 of 13 (Enable core modules) Complete\n##\n"
 
@@ -259,11 +258,6 @@ drush cc all
 
 cd sites/all/themes/STARTER
 sudo npm install
-
-# Run some initial grunt tasks
-
-grunt grunticon
-grunt sass
 
 printf "\n##\n# Configuration complete!\n##\n"
 
